@@ -1,0 +1,58 @@
+[debug] [2019-05-16T17:31:11.499Z] ----------------------------------------------------------------------
+[debug] [2019-05-16T17:31:11.502Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\dell\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js use --add
+[debug] [2019-05-16T17:31:11.502Z] CLI Version:   6.9.2
+[debug] [2019-05-16T17:31:11.502Z] Platform:      win32
+[debug] [2019-05-16T17:31:11.502Z] Node Version:  v12.2.0
+[debug] [2019-05-16T17:31:11.504Z] Time:          Thu May 16 2019 23:01:11 GMT+0530 (India Standard Time)
+[debug] [2019-05-16T17:31:11.504Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-05-16T17:31:11.528Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-05-16T17:31:11.529Z] > authorizing via signed-in user
+[debug] [2019-05-16T17:31:11.534Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+ 
+[debug] [2019-05-16T17:31:33.194Z] <<< HTTP RESPONSE 500
+[debug] [2019-05-16T17:31:33.195Z] <<< HTTP RESPONSE BODY
+[error] 
+[error] Error: HTTP Error: 500, An unknown error occurred. Please contact support.
+[debug] [2019-05-16T17:31:33.643Z] Error Context: {
+  "body": {
+    "error": {
+      "code": "UNKNOWN_ERROR",
+      "message": "An unknown error occurred. Please contact support."
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": "UNKNOWN_ERROR",
+        "message": "An unknown error occurred. Please contact support."
+      }
+    },
+    "headers": {
+      "server": "nginx",
+      "date": "Thu, 16 May 2019 17:31:20 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "97",
+      "connection": "keep-alive",
+      "x-content-type-options": "nosniff"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "admin.firebase.com",
+        "port": 443,
+        "hostname": "admin.firebase.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1/projects",
+        "path": "/v1/projects",
+        "href": "https://admin.firebase.com/v1/projects"
+      },
+      "method": "GET"
+    }
+  }
+}

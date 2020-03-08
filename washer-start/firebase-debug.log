@@ -1,0 +1,192 @@
+[debug] [2019-05-16T17:01:54.785Z] ----------------------------------------------------------------------
+[debug] [2019-05-16T17:01:54.796Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\dell\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js use --add
+[debug] [2019-05-16T17:01:54.796Z] CLI Version:   6.9.2
+[debug] [2019-05-16T17:01:54.796Z] Platform:      win32
+[debug] [2019-05-16T17:01:54.796Z] Node Version:  v12.2.0
+[debug] [2019-05-16T17:01:54.799Z] Time:          Thu May 16 2019 22:31:54 GMT+0530 (India Standard Time)
+[debug] [2019-05-16T17:01:54.799Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-05-16T17:01:54.817Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-05-16T17:01:54.818Z] > authorizing via signed-in user
+[debug] [2019-05-16T17:01:54.820Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+ 
+[debug] [2019-05-16T17:02:26.178Z] <<< HTTP RESPONSE 500
+[debug] [2019-05-16T17:02:26.179Z] <<< HTTP RESPONSE BODY
+[error] 
+[error] Error: HTTP Error: 500, An unknown error occurred. Please contact support.
+[debug] [2019-05-16T17:02:26.542Z] Error Context: {
+  "body": {
+    "error": {
+      "code": "UNKNOWN_ERROR",
+      "message": "An unknown error occurred. Please contact support."
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": "UNKNOWN_ERROR",
+        "message": "An unknown error occurred. Please contact support."
+      }
+    },
+    "headers": {
+      "server": "nginx",
+      "date": "Thu, 16 May 2019 17:02:13 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "97",
+      "connection": "keep-alive",
+      "x-content-type-options": "nosniff"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "admin.firebase.com",
+        "port": 443,
+        "hostname": "admin.firebase.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1/projects",
+        "path": "/v1/projects",
+        "href": "https://admin.firebase.com/v1/projects"
+      },
+      "method": "GET"
+    }
+  }
+}
+[debug] [2019-05-16T17:03:03.003Z] ----------------------------------------------------------------------
+[debug] [2019-05-16T17:03:03.006Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\dell\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-05-16T17:03:03.006Z] CLI Version:   6.9.2
+[debug] [2019-05-16T17:03:03.006Z] Platform:      win32
+[debug] [2019-05-16T17:03:03.006Z] Node Version:  v12.2.0
+[debug] [2019-05-16T17:03:03.008Z] Time:          Thu May 16 2019 22:33:03 GMT+0530 (India Standard Time)
+[debug] [2019-05-16T17:03:03.009Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-05-16T17:03:03.028Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-05-16T17:03:03.030Z] > authorizing via signed-in user
+[debug] [2019-05-16T17:03:03.031Z] [iam] checking project smarthome-project-for-codelabs for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2019-05-16T17:03:03.035Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/smarthome-project-for-codelabs:testIamPermissions  
+
+[debug] [2019-05-16T17:03:05.784Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-16T17:03:05.788Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/smarthome-project-for-codelabs  
+ 
+[debug] [2019-05-16T17:03:06.791Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'smarthome-project-for-codelabs'...
+[info] 
+[info] i  deploying database, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2019-05-16T17:03:13.507Z] >>> HTTP REQUEST PUT https://smarthome-project-for-codelabs.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "true",
+    ".write": "true"
+  }
+}
+
+
+[debug] [2019-05-16T17:03:15.397Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database smarthome-project-for-codelabs is valid
+[debug] [2019-05-16T17:03:15.400Z] > [functions] package.json contents: {
+  "name": "smarthome-washer",
+  "description": "Codelab for controlling devices through the Google Assistant",
+  "engines": {
+    "node": "8"
+  },
+  "dependencies": {
+    "actions-on-google": "^2.2.0",
+    "cors": "^2.8.4",
+    "firebase-admin": "^6.0.0",
+    "firebase-functions": "^2.0.0",
+    "googleapis": "^27.0.0"
+  },
+  "private": true,
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1"
+  }
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2019-05-16T17:03:15.402Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/smarthome-project-for-codelabs?view=CONSUMER_VIEW  
+ 
+[debug] [2019-05-16T17:03:15.402Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/smarthome-project-for-codelabs?view=CONSUMER_VIEW  
+ 
+[debug] [2019-05-16T17:03:18.798Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-16T17:03:19.538Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2019-05-16T17:03:19.540Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/smarthome-project-for-codelabs  
+ 
+[debug] [2019-05-16T17:03:22.063Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-16T17:03:22.064Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/23008650645:getServerAppConfig  
+ 
+[debug] [2019-05-16T17:03:23.017Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-16T17:03:23.019Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/smarthome-project-for-codelabs/versions  
+
+[debug] [2019-05-16T17:03:36.242Z] <<< HTTP RESPONSE 503
+[debug] [2019-05-16T17:03:36.242Z] <<< HTTP RESPONSE BODY
+[error] 
+[error] Error: HTTP Error: 503, The service is currently unavailable.
+[debug] [2019-05-16T17:03:36.901Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 503,
+      "message": "The service is currently unavailable.",
+      "status": "UNAVAILABLE"
+    }
+  },
+  "response": {
+    "statusCode": 503,
+    "body": {
+      "error": {
+        "code": 503,
+        "message": "The service is currently unavailable.",
+        "status": "UNAVAILABLE"
+      }
+    },
+    "headers": {
+      "vary": "X-Origin, Referer, Origin,Accept-Encoding",
+      "content-type": "application/json; charset=UTF-8",
+      "date": "Thu, 16 May 2019 17:03:23 GMT",
+      "server": "ESF",
+      "cache-control": "private",
+      "x-xss-protection": "0",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "alt-svc": "quic=\":443\"; ma=2592000; v=\"46,44,43,39\"",
+      "accept-ranges": "none",
+      "transfer-encoding": "chunked"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "firebasehosting.googleapis.com",
+        "port": 443,
+        "hostname": "firebasehosting.googleapis.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1beta1/sites/smarthome-project-for-codelabs/versions",
+        "path": "/v1beta1/sites/smarthome-project-for-codelabs/versions",
+        "href": "https://firebasehosting.googleapis.com/v1beta1/sites/smarthome-project-for-codelabs/versions"
+      },
+      "method": "POST"
+    }
+  }
+}
+[debug] [2019-05-16T17:03:38.552Z] Error: EBUSY: resource busy or locked, rename 'C:\Users\dell\.config\configstore\firebase-tools.json.2726823865' -> 'C:\Users\dell\.config\configstore\firebase-tools.json'
+    at Object.renameSync (fs.js:602:3)
+    at Function.writeFileSync [as sync] (C:\Users\dell\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\write-file-atomic\index.js:124:8)
+    at Configstore.set (C:\Users\dell\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\configstore\index.js:62:21)
+    at Configstore.set (C:\Users\dell\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\configstore\index.js:93:11)
+    at process.<anonymous> (C:\Users\dell\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js:76:21)
+    at process.emit (events.js:201:15)
+    at process.exit (internal/process/per_thread.js:157:15)
+    at Timeout._onTimeout (C:\Users\dell\AppData\Roaming\npm\node_modules\firebase-tools\lib\errorOut.js:14:17)
+    at listOnTimeout (internal/timers.js:531:17)
+    at processTimers (internal/timers.js:475:7)
+[error] 
+[error] Error: An unexpected error has occurred.
